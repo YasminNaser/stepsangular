@@ -1,0 +1,137 @@
+
+<section class="page-title">
+  <div class="bg-overlay">  
+  </div>
+  <div class="container">
+    <div class="page-title-content">
+      <h1 class="title-content">Contact Form</h1>
+
+    </div>
+  </div>
+  <!-- <ul>
+      <li *ngFor= "let branche of branches"> {{ branche.title }}</li>
+    </ul> -->
+
+</section>
+<!-- Start Branches -->
+<section class="branches-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-xs-12"  *ngFor= "let branche of branches">
+        <div class="branche-content"  *ngIf=" branche.id  < 5 ">
+          <div class="branche-title">
+            <h3 class="title-bran">{{ branche.title |  slice:0:15 }}</h3>
+          </div>
+          <div class="desc-branch">
+            {{ branche.body | slice:0:120 }}
+          </div>
+          <div class="list-info">
+              <ul class="side-info">
+                  <li class="li-address">
+                      <i class="icon-map-pin" aria-hidden="true"></i>
+                      13 Gehan St, Mansoura, Egypt
+                  </li> 
+                  <li class="li-phone">
+                      <a href="tel:#"> 
+                            <i class="icon-phone" aria-hidden="true"></i>
+                            002 0104748481 
+                      </a>
+                  </li>
+                  <li class="li-email">
+                      <a href="#"> 
+                            <i class="icon-paperclip" aria-hidden="true"></i>
+                            <!-- <i class="far fa-envelope"></i> -->
+                            steps@gmail.com 
+                      </a>
+                  </li>
+                </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End Branches -->
+<!-- Start Contact Form -->
+<section class="contact-sec">
+      <div class="">
+            <div class="col-md-6 col-sm-12  img-content">
+                <div class="img-contact">
+                    <div class="header-contact">
+                        <img src="../assets/images/icon_bg.png">
+                        <h3>
+                          <span>Need Help?!!</span>
+                          <br>
+                          Don’t Hesitate To Ask
+                        </h3>
+                        <div class="lines">
+                          <span class="h-line-1"></span>
+                          <span class="h-line-2"></span>
+                          
+
+                        </div>
+                      </div>
+
+                </div>
+                <!-- <div class="header-img">
+                  <div class="img-header">
+                    <img src="../assets/images/icon_bg.png">
+                  </div>
+                </div> -->
+            </div>
+            <div class="col-md-6 col-sm-12 form-content">
+              <div class="inner-form">
+                <div class="form-space"></div>
+                <div class="inner-form">
+                    <div class="header-form">
+                        <h3>Write To Us</h3>
+                    </div>
+                    <div class="form-rows">
+                    
+                        <form class="contact-form">
+                          <div class="row">
+                                <div class="form-field col-xl-6 col-xs-12">
+                                    <input id="name" class="input-text js-input" type="text" required>
+                                    <label class="label" for="name">Name</label>
+                                </div>
+                                <div class="form-field col-xl-6 col-xs-12">
+                                    <input id="email" class="input-text js-input" type="email" required>
+                                    <label class="label" for="email">Email</label>
+                                </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-field col-xl-6 col-xs-12">
+                                  <input id="name" class="input-text js-input" type="text" required>
+                                  <label class="label" for="name">Phone</label>
+                              </div>
+                              <div class="form-field col-xl-6 col-xs-12">
+                                  <input id="email" class="input-text js-input" type="text" required>
+                                  <label class="label" for="email">Subject</label>
+                              </div>
+                        </div>
+                            <div class="row">
+                                <div class="form-field col-12">
+                                    <textarea id="message" cols="40" rows="4" class="input-text js-input textarea-text" type="text" placeholder="Message" required></textarea>
+                                 </div>
+                            </div>
+                            <div class="form-field col x-100 align-center">
+                               <input class="submit-btn" type="submit" value="SEND MESSAGE">
+                            </div>
+                         </form>
+
+                </div>
+
+</div>
+</div>
+            </div>
+      </div>
+</section>
+     
+    
+<!-- End Contact Form -->
+
+
+
+

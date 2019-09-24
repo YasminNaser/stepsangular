@@ -1,0 +1,185 @@
+/**************** Fonts ******************/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a{
+    text-decoration: none !important;
+}
+dl, ol, ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+  /*************** Top Header ***************/
+  .topbar-panel{
+    background: #282828;
+}
+.header-layout .topbar-panel .top-info,.topbar-panel .top-social{
+    flex-grow: 1;
+    display: inline-block;
+
+}
+.header-layout .topbar-panel .top-info li{
+    font-size: 14px;
+    display: inline-block;
+    padding: 11px 20px 10px 23px;
+    color:#9b9b9b !important;
+    position: relative;
+    /* line-height: 24px; */
+}
+.header-layout .topbar-panel .top-info li i{
+    color:#e6ae48;
+    font-size: 16px;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 48%;
+    left: 0;
+}
+.header-layout .topbar-panel .top-info li a{
+    color:#9b9b9b !important;
+}
+.header-layout .topbar-panel .top-info li a:hover,.header-layout .topbar-panel .top-info li a:active{
+    color:#e6ae48 !important;
+    transition: all 300ms linear 0ms;
+}
+.topbar-panel .top-social{
+    text-align: right;
+    float: right;
+}
+.topbar-panel .top-social li{
+    padding:10px 9px;
+    color:#9b9b9b !important;
+    display: inline-block;
+}
+.header-layout .topbar-panel .top-social li a{
+    color:#e6ae48 !important;
+    font-size: 14px;
+}
+.header-layout .topbar-panel .top-social li a:hover,.header-layout .topbar-panel .top-social li a:active{
+    color:#fff !important;
+    transition: all 300ms linear 0ms;
+}
+.header-layout .mat-toolbar-row,.header-layout .mat-toolbar-single-row{
+    height: auto !important;
+    color:transparent !important;
+
+}
+
+
+/************ POPUp Dialog //////// SideNav ****************/
+.dialog-style{
+    position: absolute !important;
+    right:0px !important;
+}
+.cdk-overlay-dark-backdrop{
+    background-color: rgba(27, 26, 26, 0.98);
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    -khtml-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    right: 0;
+}
+.dialog-style  .mat-dialog-container {
+    height: 100%;
+    border-radius: 0px;
+    z-index: 12000;
+    background-color: #fff;
+    padding: 100px 50px 30px;
+    width: 370px;
+}
+.cdk-overlay-pane{
+    height: 100%;
+    position: absolute;
+    right: 0;  
+}
+.side-nav .grapper-box-sidebar{
+    padding: 100px 0px 0px !important;
+}
+.side-nav .grapper-box-sidebar .btn-close{
+    display: block;
+    float: right;
+    position: absolute;
+    top:50px;  
+    right: 50px;
+    font-weight: 800;
+    color:#333;
+}
+.side-nav .grapper-box-sidebar .btn-close:hover{
+    -webkit-transition: all 300ms linear 0ms;
+    -khtml-transition: all 300ms linear 0ms;
+    -moz-transition: all 300ms linear 0ms;
+    -ms-transition: all 300ms linear 0ms;
+    -o-transition: all 300ms linear 0ms;
+    transition: all 300ms linear 0ms;
+    color:#e6ae48;
+}
+.content-text{
+
+}
+.widget-title{
+    font-size: 15px;
+    color: #9b9b9b;
+    font-weight: 400;
+    line-height: 22px;
+    font-family: "Poppins";
+    padding-bottom: 18px;
+}
+.side-info li{
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    color: #9b9b9b;
+}
+.side-info  a{
+    color: #9b9b9b !important;
+}
+.side-info  a:hover{
+    -webkit-transition: all 300ms linear 0ms;
+    -khtml-transition: all 300ms linear 0ms;
+    -moz-transition: all 300ms linear 0ms;
+    -ms-transition: all 300ms linear 0ms;
+    -o-transition: all 300ms linear 0ms;
+    transition: all 300ms linear 0ms;
+    color:#e6ae48 !important;
+}
+
+.side-info li i,.side-info li a i{
+    position: absolute;
+    top: 48%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #e6ae48;
+}
+.lines{
+    width: 30px;
+    height: 6px;
+    position: relative;
+    display: inline-block;
+}
+.lines .h-line-1,.lines .h-line-2{
+    border-color: #ffffff!important;
+    width:20px;
+    height: 2px;
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    background: #fff;
+
+}
+.lines .h-line-1{
+    top:0;
+    right:0;
+}
+.lines .h-line-2{
+    bottom:0;
+    left:0;
+}
+
