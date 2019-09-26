@@ -75,11 +75,7 @@
                       </div>
 
                 </div>
-                <!-- <div class="header-img">
-                  <div class="img-header">
-                    <img src="../assets/images/icon_bg.png">
-                  </div>
-                </div> -->
+           
             </div>
             <div class="col-md-6 col-sm-12 form-content">
               <div class="inner-form">
@@ -90,24 +86,26 @@
                     </div>
                     <div class="form-rows">
                     
-                        <form class="contact-form">
+                        <form class="contact-form" [formGroup]="from">
                           <div class="row">
                                 <div class="form-field col-xl-6 col-xs-12">
-                                    <input id="name" class="input-text js-input" type="text" required>
+                                    <input id="name" class="input-text js-input" type="text" >
                                     <label class="label" for="name">Name</label>
                                 </div>
                                 <div class="form-field col-xl-6 col-xs-12">
-                                    <input id="email" class="input-text js-input" type="email" required>
+                                    <input  class="input-text js-input" type="email" id="email" #email FormControlName="email">
                                     <label class="label" for="email">Email</label>
                                 </div>
+                                <div *ngIf="email.touched && email.invalid" class="alert alert-danger"> Error</div>
+                                
                           </div>
                           <div class="row">
                               <div class="form-field col-xl-6 col-xs-12">
-                                  <input id="name" class="input-text js-input" type="text" required>
+                                  <input id="phone" class="input-text js-input" type="text" >
                                   <label class="label" for="name">Phone</label>
                               </div>
                               <div class="form-field col-xl-6 col-xs-12">
-                                  <input id="email" class="input-text js-input" type="text" required>
+                                  <input id="subject" class="input-text js-input" type="text" >
                                   <label class="label" for="email">Subject</label>
                               </div>
                         </div>
@@ -132,6 +130,9 @@
     
 <!-- End Contact Form -->
 
-
+<!-- Map -->
+<agm-map [latitude]="lat" [longitude]="lng"   >
+  <agm-marker [latitude]="lat" [longitude]="lng" icon="http://maps.google.com/mapfiles/ms/icons/green-dot.png" ></agm-marker>
+</agm-map>
 
 

@@ -16,6 +16,11 @@ import { HomeComponent } from './home/home.component';
 import { Observable } from 'rxjs';
 import {HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { CustomFormsModule } from 'ng2-validation'
+import { ReactiveFormsModule } from '@angular/forms';
+// For Google Map 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,12 @@ import { FooterComponent } from './footer/footer.component';
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule 
+    HttpClientModule,
+    CustomFormsModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC3NVM-2584m6EdL_ie-riCC5Kx009IpC4'
+    }) 
   ],
   entryComponents: [
     DialogComponent

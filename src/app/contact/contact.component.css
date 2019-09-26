@@ -242,3 +242,7 @@
 .input-text.js-input:focus{
     border-color: #e6ae48;
 }
+agm-map {
+    height: 550px;
+    width: 100%;
+  }
