@@ -86,36 +86,42 @@
                     </div>
                     <div class="form-rows">
                     
-                        <form class="contact-form" [formGroup]="from">
+                        <form class="contact-form" name="from" [formGroup]="from" (ngSubmit)="onSubmit()">
                           <div class="row">
                                 <div class="form-field col-xl-6 col-xs-12">
-                                    <input id="name" class="input-text js-input" type="text" >
+                                    <input  class="input-text js-input" type="text" id="name" #name formControlName="name">
+                                    
+                                    
                                     <label class="label" for="name">Name</label>
+                                    <p *ngIf="name.value.errors?.rangeLength">error message</p>
+                                    
                                 </div>
                                 <div class="form-field col-xl-6 col-xs-12">
                                     <input  class="input-text js-input" type="email" id="email" #email FormControlName="email">
                                     <label class="label" for="email">Email</label>
                                 </div>
-                                <div *ngIf="email.touched && email.invalid" class="alert alert-danger"> Error</div>
+                                <div *ngIf="from.get('email').touched && from.get('email').invalid" class="alert alert-danger"> Error</div>
                                 
                           </div>
                           <div class="row">
                               <div class="form-field col-xl-6 col-xs-12">
-                                  <input id="phone" class="input-text js-input" type="text" >
+                                  <input class="input-text js-input" type="text" id="phone" #phone FormControlName="email" >
                                   <label class="label" for="name">Phone</label>
                               </div>
                               <div class="form-field col-xl-6 col-xs-12">
-                                  <input id="subject" class="input-text js-input" type="text" >
+                                  <input  class="input-text js-input" type="text" id="subject" #subject FormControlName="subject">
                                   <label class="label" for="email">Subject</label>
                               </div>
                         </div>
                             <div class="row">
                                 <div class="form-field col-12">
-                                    <textarea id="message" cols="40" rows="4" class="input-text js-input textarea-text" type="text" placeholder="Message" required></textarea>
+                                    <textarea id="message" cols="40" rows="4" class="input-text js-input textarea-text" type="text" placeholder="Message"
+                                     required
+                                     id="message" #message FormControlName="message"></textarea>
                                  </div>
                             </div>
                             <div class="form-field col x-100 align-center">
-                               <input class="submit-btn" type="submit" value="SEND MESSAGE">
+                               <button class="submit-btn" type="submit" value="" [disabled]="!from.valid">SEND MESSAGE</button>
                             </div>
                          </form>
 

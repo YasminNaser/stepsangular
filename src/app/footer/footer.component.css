@@ -34,3 +34,32 @@
     font-family: "Montserrat";
 
 }
+.post-item{
+    margin-bottom: 20px;
+}
+.post-item .post-date{
+    color:#616161;
+    line-height: 1;
+    margin-bottom: 11px;
+
+}
+.post-item  .post-title h5{
+    line-height: 22px;
+    font-size: 14px;
+    margin-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+.post-item  .post-title a{
+    color: #cecece;
+}
+.post-item  .post-title a:hover{
+    color:#e6ae48
+}
+.newsletter-form{
+    display: block;
+    margin-bottom: 23px;
+}
+.newsletter-form .form-group{
+    
+}

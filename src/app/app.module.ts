@@ -16,11 +16,11 @@ import { HomeComponent } from './home/home.component';
 import { Observable } from 'rxjs';
 import {HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
-import { CustomFormsModule } from 'ng2-validation'
-import { ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule,CustomValidators } from 'ng2-validation'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // For Google Map 
 import { AgmCoreModule } from '@agm/core';
-
+1
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +38,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule,
     CustomFormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
