@@ -31,6 +31,18 @@ nav.main-navigation {
     float: right;
     padding-left: 0px;
 }
+.profile-menu{
+    display: inline-block;
+    float: none;
+
+}
+.profile-menu a{
+    cursor: pointer;
+}
+.user{
+    padding-left: 15px;
+    cursor: pointer;
+}
 
 .menu li {
     display: inline-block;

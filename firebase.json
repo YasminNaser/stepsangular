@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/stepsangular",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

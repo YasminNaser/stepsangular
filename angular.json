@@ -29,14 +29,24 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/assets/fonts/et-line-font/style.css",
-              "./src/assets/styles/styles.css"
-             
+              "./src/assets/styles/styles.css",
+              "node_modules/animate.css/animate.css",
+              "./src/assets/engine1/style.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.slim.min.js",
+            "scripts": [  
+              
+              // "node_modules/jquery/dist/jquery.slim.min.js",
+              // "node_modules/jquery/dist/jquery.min.js",
+              // "node_modules/wowjs/dist/wow.js",
+              // "./src/assets/engine1/jj.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./src/assets/js/main.js" 
+              "./src/assets/js/main.js"
+              // "./src/assets/js/jqueryy.js", 
+              // "./src/assets/engine1/j.js",
+              // "./src/assets/engine1/wowslider.js",
+              // "./src/assets/engine1/wowslider.mod.js",
+              // "./src/assets/engine1/script.js" 
             ],
             "es5BrowserSupport": true
           },

@@ -1,6 +1,59 @@
 <!-- Start Slider Home -->
-<section id="content" class="">
 
-</section>
+
+
+    <!-- Start WOWSlider.com BODY section -->
+<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+        <div id="wowslider-container1">
+                <div class="ws_images"><ul>
+                    <li><img src="../assets/data1/images/insta1.jpg" alt="insta1" title="insta1" id="wows1_0"/></li>
+                    <li><img src="../assets/data1/images/insta2.jpg" alt="insta2" title="insta2" id="wows1_1"/></li>
+                    <li><img src="../assets/data1/images/insta3.jpg" alt="insta3" title="insta3" id="wows1_2"/></li>
+                    <li><a><img src="../assets/data1/images/insta4.jpg" alt="bootstrap slideshow" title="insta4" id="wows1_3"/></a></li>
+                    <li><img src="../assets/data1/images/insta5.jpg" alt="insta5" title="insta5" id="wows1_4"/></li>
+                </ul></div>
+                <div class="ws_bullets"><div>
+                    <a href="#" title="insta1"><span><img src="../assets/data1/tooltips/insta1.jpg" alt="insta1"/>1</span></a>
+                    <a href="#" title="insta2"><span><img src="../assets/data1/tooltips/insta2.jpg" alt="insta2"/>2</span></a>
+                    <a href="#" title="insta3"><span><img src="../assets/data1/tooltips/insta3.jpg" alt="insta3"/>3</span></a>
+                    <a href="#" title="insta4"><span><img src="../assets/data1/tooltips/insta4.jpg" alt="insta4"/>4</span></a>
+                    <a href="#" title="insta5"><span><img src="../assets/data1/tooltips/insta5.jpg" alt="insta5"/>5</span></a>
+                </div></div>
+                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">css slider</a> by WOWSlider.com v8.8</div>
+                <div class="ws_shadow"></div>
+                </div>	
+   
+        <!-- End WOWSlider.com BODY section -->
+    
+
+
 <!-- End Slider Home -->
+<!-- Start Latest Articles -->
+<section class="latest-posts">
+    <div class="container">
+        <div class="row">
+            <!-- 3articles -->
+            <div class="col-md-4 col-sm-6 col-xs-12"  *ngFor= "let branche of branches">
+                <!-- Post -->
+                <div class="post"  *ngIf=" branche.id  < 4 ">
+                    <h5 class="sub-title-post">{{ branche.title |  slice:0:13 }}</h5>
+                    <h3 class="title-post">{{ branche.title |  slice:0:19 }}</h3>
+                    <div class="img-post">
+                        <img src="../assets/images/post.jpg">
+                    </div>
+                    <div class="desc-post">
+                            {{ branche.body | slice:0:120 }}
+                    </div>
+                    <a class="btn-more" href="#">Read More</a>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Latest Articles -->
+
+
 

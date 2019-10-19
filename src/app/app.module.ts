@@ -20,7 +20,27 @@ import { CustomFormsModule,CustomValidators } from 'ng2-validation'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // For Google Map 
 import { AgmCoreModule } from '@agm/core';
-1
+// 1. Import the libs you need
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import * as firebase from 'firebase';
+import { environment } from 'src/environments/environment.prod';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+var firebaseConfig = {
+  apiKey: "AIzaSyC5xWffVvzDmLIqZQOmU03_US-KL4IEovM",
+  authDomain: "steps-bb36c.firebaseapp.com",
+  databaseURL: "https://steps-bb36c.firebaseio.com",
+  projectId: "steps-bb36c",
+  storageBucket: "steps-bb36c.appspot.com",
+  messagingSenderId: "967818533041",
+  appId: "1:967818533041:web:e46256c57ca180e68faa90",
+  measurementId: "G-HBN9KZF00G"
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +49,10 @@ import { AgmCoreModule } from '@agm/core';
     ContactComponent,
     BlogComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    ProfileComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +66,16 @@ import { AgmCoreModule } from '@agm/core';
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC3NVM-2584m6EdL_ie-riCC5Kx009IpC4'
-    }) 
+    }),
+    // 3. Initialize
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
   ],
   entryComponents: [
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
 
   providers: [],

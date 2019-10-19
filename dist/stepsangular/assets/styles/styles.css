@@ -3,6 +3,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('~animate.css/animate.css');
 body{
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
@@ -241,4 +242,84 @@ dl, ol, ul {
     position: absolute;
     top: 0;
     left: 0;
+}
+.btn-more{
+    text-transform: uppercase;
+    color: #222;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-more:hover{
+    -webkit-transition: all 300ms linear 0ms;
+    -khtml-transition: all 300ms linear 0ms;
+    -moz-transition: all 300ms linear 0ms;
+    -ms-transition: all 300ms linear 0ms;
+    -o-transition: all 300ms linear 0ms;
+    transition: all 300ms linear 0ms;
+    color: #e6ae48;
+}
+.sub-title-post{
+    font-family: 'sans-serif';
+    font-style: italic;
+    font-size: 20px;
+    font-weight: normal;
+    color: #9b9b9b;
+    margin-bottom: 5px;
+}
+.btn-more{
+    text-transform: uppercase;
+    color: #222;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-more:hover{
+    -webkit-transition: all 300ms linear 0ms;
+    -khtml-transition: all 300ms linear 0ms;
+    -moz-transition: all 300ms linear 0ms;
+    -ms-transition: all 300ms linear 0ms;
+    -o-transition: all 300ms linear 0ms;
+    transition: all 300ms linear 0ms;
+    color: #e6ae48;
+}
+.post{
+    /* padding-left:15px;
+    padding-right:15px; */
+    margin-bottom: 50px;
+    
+}
+.img-post{
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 25px;
+}
+.img-post img{
+    width:100%;
+    max-width: 100%;
+    height: auto;
+}
+.title-post{
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #222;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
+.title-post:hover{
+    -webkit-transition: all 300ms linear 0ms;
+    -khtml-transition: all 300ms linear 0ms;
+    -moz-transition: all 300ms linear 0ms;
+    -ms-transition: all 300ms linear 0ms;
+    -o-transition: all 300ms linear 0ms;
+    transition: all 300ms linear 0ms;
+    color: #e6ae48;
+
+}
+.desc-post{
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 15px;
+    color:#9b9b9b;
 }

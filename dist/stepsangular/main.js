@@ -301,29 +301,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var ng2_validation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng2-validation */ "./node_modules/ng2-validation/dist/index.js");
-/* harmony import */ var ng2_validation__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng2_validation__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ng2_validation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng2-validation */ "./node_modules/ng2-validation/dist/index.js");
+/* harmony import */ var ng2_validation__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng2_validation__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var src_app_services_post_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/post.service */ "./src/app/services/post.service.ts");
 
 
 
 
 
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent(http) {
-        this.http = http;
+    function ContactComponent(service) {
+        this.service = service;
         this.title = 'My first AGM project';
         this.lat = 31.130024;
         this.lng = 31.340092;
-        this.url = 'https://jsonplaceholder.typicode.com/posts';
     }
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get(this.url).subscribe(function (res) { _this.branches = res; });
-        this.from = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
-            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
-            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', ng2_validation__WEBPACK_IMPORTED_MODULE_4__["CustomValidators"].rangeLength([5, 9]))
+        this.service.get().subscribe(function (res) { _this.branches = res; });
+        this.from = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', ng2_validation__WEBPACK_IMPORTED_MODULE_3__["CustomValidators"].rangeLength([5, 9]))
         });
     };
     Object.defineProperty(ContactComponent.prototype, "email", {
@@ -345,7 +344,7 @@ var ContactComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./contact.component.html */ "./src/app/contact/contact.component.html"),
             styles: [__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_post_service__WEBPACK_IMPORTED_MODULE_4__["PostService"]])
     ], ContactComponent);
     return ContactComponent;
 }());
@@ -484,7 +483,7 @@ module.exports = ".mat-toolbar-row,.mat-toolbar-single-row{\r\n    height: auto 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"header-site\">\n  <div class=\"header-layout\">\n     <!-- Start topbar-panel -->\n    <div class=\"topbar-panel\" id=\"topbarpanel\">\n      <div class=\"container\">\n        <!-- Top Info contact -->\n        <ul class=\"top-info\">\n          <li class=\"li-address\">\n              <i class=\"icon-map-pin\" aria-hidden=\"true\"></i>\n              13 Gehan St, Mansoura, Egypt\n          </li> \n          <li class=\"li-phone\">\n              <a href=\"tel:#\"> \n                    <i class=\"icon-phone\" aria-hidden=\"true\"></i>\n                    002 0104748481 \n              </a>\n          </li>\n          <li class=\"li-email\">\n              <a href=\"#\"> \n                    <i class=\"icon-paperclip\" aria-hidden=\"true\"></i>\n                    <!-- <i class=\"far fa-envelope\"></i> -->\n                    steps@gmail.com \n              </a>\n          </li>\n        </ul> \n        <!-- Top Social Media -->\n        <ul class=\"top-social\">\n          <li>Follow Us:</li>\n          <li>\n            <a href=\"#\">\n              <i class=\"fab fa-facebook-f\"></i>\n            </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-twitter\"></i>\n              </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-google-plus-g\"></i>\n              </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-linkedin-in\"></i>     \n              </a>\n          </li>\n\n        </ul>\n      </div>\n\n    </div>\n    <!-- End topbar-panel -->\n  </div>\n\n<div class=\"nav-site\">\n    <!-- Start  Nav in Desktop -->\n    <div class=\"container\">\n        <div class=\"navbar nav-flex\">\n            <div class=\"site-branding\">\n                <a class=\"logo-desktop\" href=\"#\">\n                    <img src=\"../../assets/images/logo.png\">\n                </a>\n            </div>\n\n            <!-- Menu -->\n            <nav class=\"main-navigation\">\n                   <ul class=\"menu\">\n                            <li><a class=\"nav-link active\" routerLink=\"/home\"> HOME</a>\n                                    <ul class=\"sub-menu\">\n                                            <li><a href=\"#\">Sub-Menu 1</a></li>\n                                            <li><a href=\"#\">Sub-Menu 2</a></li>\n                                            <li><a href=\"#\">Sub-Menu 3</a></li>\n                                            <li><a href=\"#\">Sub-Menu 4</a></li>\n                                            <li><a href=\"#\">Sub-Menu 5</a></li>   \n                                    </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\">ABOUT</a></li>\n                            <li><a class=\"nav-link top-none\" href=\"#\">PORTFOLIO</a>\n                            <ul class=\"sub-menu\">\n                            <li><a href=\"#\">Sub-Menu 1</a></li>\n                            <li><a href=\"#\">Sub-Menu 2</a></li>\n                                <li><a href=\"#\">Sub-Menu 3</a></li>\n                            </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" routerLink=\"/blog\"> BLOG</a></li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\"> CATEGORIES</a>\n                            <ul class=\"sub-menu\">\n                            <li><a href=\"#\">Sub-Menu 1</a></li>\n                            <li><a href=\"#\">Sub-Menu 2</a></li>\n                                <li><a href=\"#\">Sub-Menu 3</a></li>\n                            </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" routerLink=\"/contact\"> CONTACT</a></li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\"> SITEMAP</a></li>\n                            </ul>\n            </nav>\n            <!-- Right Menu -->\n        <div class=\"site-right-menu\">\n                <!-- Start Cart -->\n                <div class=\"cart\">\n                    <span class=\"icon-cart\">\n                       \n                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"16.094\" viewBox=\"0 0 17 16.094\" id=\"cart\">\n                                     <path class=\"cls-1\" d=\"M1181.58,43h-3.59v2h2.27l0.94,3.323L1183.16,55h10.11l1.73-9h-13Zm10.46,10h-7.68l-1.37-5h10Zm-1.05,3a2,2,0,0,0-2,2c0,1.1.91,1,2.01,1s1.99,0.1,1.99-1A2,2,0,0,0,1190.99,56Zm-6,0a2,2,0,0,0-2,2c0,1.1.91,1,2.01,1s1.99,0.1,1.99-1A2,2,0,0,0,1184.99,56Z\" transform=\"translate(-1178 -43)\"></path>\n                                </svg>\n                              \n\n                        <span class=\"counter-items\">0</span>\n\n                    </span>                    \n                </div>\n                <!-- End Cart -->\n                <!-- Search  Icon -->\n                <span class=\"menu-right-item h-btn-search\">\n                    <i class=\"fa fa-search\"></i>\n                </span>\n                <!-- SideBar -->\n                <span class=\"btn-icon-sidebar-popup\"  mat-raised-button (click)=\"openDialog()\">\n                    <span></span>\n                </span>\n                \n                \n            </div>\n                \n        </div>\n        \n    </div>\n    <!-- End Nav in Desktop -->\n    \n</div>  \n</header>\n\n\n\n"
+module.exports = "<header class=\"header-site\">\n  <div class=\"header-layout\">\n     <!-- Start topbar-panel -->\n    <div class=\"topbar-panel\" id=\"topbarpanel\">\n      <div class=\"container\">\n        <!-- Top Info contact -->\n        <ul class=\"top-info\">\n          <li class=\"li-address\">\n              <i class=\"icon-map-pin\" aria-hidden=\"true\"></i>\n              13 Gehan St, Mansoura, Egypt\n          </li> \n          <li class=\"li-phone\">\n              <a href=\"tel:#\"> \n                    <i class=\"icon-phone\" aria-hidden=\"true\"></i>\n                    002 0104748481 \n              </a>\n          </li>\n          <li class=\"li-email\">\n              <a href=\"#\"> \n                    <i class=\"icon-paperclip\" aria-hidden=\"true\"></i>\n                    <!-- <i class=\"far fa-envelope\"></i> -->\n                    steps@gmail.com \n              </a>\n          </li>\n        </ul> \n        <!-- Top Social Media -->\n        <ul class=\"top-social\">\n          <li>Follow Us:</li>\n          <li>\n            <a href=\"#\">\n              <i class=\"fab fa-facebook-f\"></i>\n            </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-twitter\"></i>\n              </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-google-plus-g\"></i>\n              </a>\n          </li>\n          <li>\n              <a href=\"#\">\n                  <i class=\"fab fa-linkedin-in\"></i>     \n              </a>\n          </li>\n\n        </ul>\n      </div>\n\n    </div>\n    <!-- End topbar-panel -->\n  </div>\n\n<div class=\"nav-site\">\n    <!-- Start  Nav in Desktop -->\n    <div class=\"container\">\n        <div class=\"navbar nav-flex\">\n            <div class=\"site-branding\">\n                <a class=\"logo-desktop\" href=\"#\">\n                    <img src=\"../../assets/images/logo.png\">\n                </a>\n            </div>\n\n            <!-- Menu -->\n            <nav class=\"main-navigation\">\n                   <ul class=\"menu\">\n                            <li><a class=\"nav-link active\" routerLink=\"/home\"> HOME</a>\n                                    <ul class=\"sub-menu\">\n                                            <li><a routerLink=\"/home\">Sub-Menu 1</a></li>\n                                            <li><a routerLink=\"/home\">Sub-Menu 2</a></li>\n                                            <li><a routerLink=\"/home\">Sub-Menu 3</a></li>\n                                            <li><a routerLink=\"/home\">Sub-Menu 4</a></li>\n                                            <li><a routerLink=\"/home\">Sub-Menu 5</a></li>   \n                                    </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\">ABOUT</a></li>\n                            <li><a class=\"nav-link top-none\" href=\"#\">PORTFOLIO</a>\n                            <ul class=\"sub-menu\">\n                            <li><a href=\"#\">Sub-Menu 1</a></li>\n                            <li><a href=\"#\">Sub-Menu 2</a></li>\n                                <li><a href=\"#\">Sub-Menu 3</a></li>\n                            </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" routerLink=\"/blog\"> BLOG</a></li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\"> CATEGORIES</a>\n                            <ul class=\"sub-menu\">\n                            <li><a href=\"#\">Sub-Menu 1</a></li>\n                            <li><a href=\"#\">Sub-Menu 2</a></li>\n                                <li><a href=\"#\">Sub-Menu 3</a></li>\n                            </ul>\n                            </li>\n                            <li><a  class=\"nav-link top-none\" routerLink=\"/contact\"> CONTACT</a></li>\n                            <li><a  class=\"nav-link top-none\" href=\"#\"> SITEMAP</a></li>\n                            </ul>\n            </nav>\n            <!-- Right Menu -->\n        <div class=\"site-right-menu\">\n                <!-- Start Cart -->\n                <div class=\"cart\">\n                    <span class=\"icon-cart\">\n                       \n                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"16.094\" viewBox=\"0 0 17 16.094\" id=\"cart\">\n                                     <path class=\"cls-1\" d=\"M1181.58,43h-3.59v2h2.27l0.94,3.323L1183.16,55h10.11l1.73-9h-13Zm10.46,10h-7.68l-1.37-5h10Zm-1.05,3a2,2,0,0,0-2,2c0,1.1.91,1,2.01,1s1.99,0.1,1.99-1A2,2,0,0,0,1190.99,56Zm-6,0a2,2,0,0,0-2,2c0,1.1.91,1,2.01,1s1.99,0.1,1.99-1A2,2,0,0,0,1184.99,56Z\" transform=\"translate(-1178 -43)\"></path>\n                                </svg>\n                              \n\n                        <span class=\"counter-items\">0</span>\n\n                    </span>                    \n                </div>\n                <!-- End Cart -->\n                <!-- Search  Icon -->\n                <span class=\"menu-right-item h-btn-search\">\n                    <i class=\"fa fa-search\"></i>\n                </span>\n                <!-- SideBar -->\n                <span class=\"btn-icon-sidebar-popup\"  mat-raised-button (click)=\"openDialog()\">\n                    <span></span>\n                </span>\n                \n                \n            </div>\n                \n        </div>\n        \n    </div>\n    <!-- End Nav in Desktop -->\n    \n</div>  \n</header>\n\n\n\n"
 
 /***/ }),
 
@@ -541,7 +540,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".latest-posts{\r\n    padding-top:100px;\r\n}\r\n.latest-posts .img-post:before{\r\n\r\n    opacity: 1;\r\n\r\n}\r\n.latest-posts .img-post:before,.latest-posts .img-post:hover:before{\r\n    right: 0;\r\n    top: 0;\r\n}\r\n.latest-posts .img-post::after{\r\n    \r\n\r\n    opacity: 0.7;\r\n\r\n}\r\n.latest-posts .img-post:after,.latest-posts .img-post:hover:after{\r\n    left: 0;\r\n    bottom: 0;\r\n}\r\n.latest-posts .img-post:hover:after,.latest-posts .img-post:hover:before{\r\n    content: \"\";\r\n    background: #fff;\r\n    height: 0;\r\n    width: 0;\r\n    z-index: 1;\r\n    position: absolute;\r\n    transition-duration: 1.1s;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTs7SUFFSSxVQUFVOztBQUVkO0FBQ0E7SUFDSSxRQUFRO0lBQ1IsTUFBTTtBQUNWO0FBRUE7OztJQUdJLFlBQVk7O0FBRWhCO0FBQ0E7SUFDSSxPQUFPO0lBQ1AsU0FBUztBQUNiO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsZ0JBQWdCO0lBQ2hCLFNBQVM7SUFDVCxRQUFRO0lBQ1IsVUFBVTtJQUNWLGtCQUFrQjtJQUdsQix5QkFBeUI7QUFDN0IiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5sYXRlc3QtcG9zdHN7XHJcbiAgICBwYWRkaW5nLXRvcDoxMDBweDtcclxufVxyXG4ubGF0ZXN0LXBvc3RzIC5pbWctcG9zdDpiZWZvcmV7XHJcblxyXG4gICAgb3BhY2l0eTogMTtcclxuXHJcbn1cclxuLmxhdGVzdC1wb3N0cyAuaW1nLXBvc3Q6YmVmb3JlLC5sYXRlc3QtcG9zdHMgLmltZy1wb3N0OmhvdmVyOmJlZm9yZXtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgdG9wOiAwO1xyXG59XHJcblxyXG4ubGF0ZXN0LXBvc3RzIC5pbWctcG9zdDo6YWZ0ZXJ7XHJcbiAgICBcclxuXHJcbiAgICBvcGFjaXR5OiAwLjc7XHJcblxyXG59XHJcbi5sYXRlc3QtcG9zdHMgLmltZy1wb3N0OmFmdGVyLC5sYXRlc3QtcG9zdHMgLmltZy1wb3N0OmhvdmVyOmFmdGVye1xyXG4gICAgbGVmdDogMDtcclxuICAgIGJvdHRvbTogMDtcclxufVxyXG4ubGF0ZXN0LXBvc3RzIC5pbWctcG9zdDpob3ZlcjphZnRlciwubGF0ZXN0LXBvc3RzIC5pbWctcG9zdDpob3ZlcjpiZWZvcmV7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGhlaWdodDogMDtcclxuICAgIHdpZHRoOiAwO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIC13ZWJraXQtdHJhbnNpdGlvbi1kdXJhdGlvbjogMS4xcztcclxuICAgIC1vLXRyYW5zaXRpb24tZHVyYXRpb246IDEuMXM7XHJcbiAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAxLjFzO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -552,7 +551,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Start Slider Home -->\n<section id=\"content\" class=\"\">\n\n</section>\n<!-- End Slider Home -->\n\n"
+module.exports = "<!-- Start Slider Home -->\n\n\n\n    <!-- Start WOWSlider.com BODY section -->\n<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->\n        <div id=\"wowslider-container1\">\n                <div class=\"ws_images\"><ul>\n                    <li><img src=\"../assets/data1/images/insta1.jpg\" alt=\"insta1\" title=\"insta1\" id=\"wows1_0\"/></li>\n                    <li><img src=\"../assets/data1/images/insta2.jpg\" alt=\"insta2\" title=\"insta2\" id=\"wows1_1\"/></li>\n                    <li><img src=\"../assets/data1/images/insta3.jpg\" alt=\"insta3\" title=\"insta3\" id=\"wows1_2\"/></li>\n                    <li><a><img src=\"../assets/data1/images/insta4.jpg\" alt=\"bootstrap slideshow\" title=\"insta4\" id=\"wows1_3\"/></a></li>\n                    <li><img src=\"../assets/data1/images/insta5.jpg\" alt=\"insta5\" title=\"insta5\" id=\"wows1_4\"/></li>\n                </ul></div>\n                <div class=\"ws_bullets\"><div>\n                    <a href=\"#\" title=\"insta1\"><span><img src=\"../assets/data1/tooltips/insta1.jpg\" alt=\"insta1\"/>1</span></a>\n                    <a href=\"#\" title=\"insta2\"><span><img src=\"../assets/data1/tooltips/insta2.jpg\" alt=\"insta2\"/>2</span></a>\n                    <a href=\"#\" title=\"insta3\"><span><img src=\"../assets/data1/tooltips/insta3.jpg\" alt=\"insta3\"/>3</span></a>\n                    <a href=\"#\" title=\"insta4\"><span><img src=\"../assets/data1/tooltips/insta4.jpg\" alt=\"insta4\"/>4</span></a>\n                    <a href=\"#\" title=\"insta5\"><span><img src=\"../assets/data1/tooltips/insta5.jpg\" alt=\"insta5\"/>5</span></a>\n                </div></div>\n                <div class=\"ws_script\" style=\"position:absolute;left:-99%\"><a href=\"http://wowslider.net\">css slider</a> by WOWSlider.com v8.8</div>\n                <div class=\"ws_shadow\"></div>\n                </div>\t\n   \n        <!-- End WOWSlider.com BODY section -->\n    \n\n\n<!-- End Slider Home -->\n<!-- Start Latest Articles -->\n<section class=\"latest-posts\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <!-- 3articles -->\n            <div class=\"col-md-4 col-sm-6 col-xs-12\"  *ngFor= \"let branche of branches\">\n                <!-- Post -->\n                <div class=\"post\"  *ngIf=\" branche.id  < 4 \">\n                    <h5 class=\"sub-title-post\">{{ branche.title |  slice:0:13 }}</h5>\n                    <h3 class=\"title-post\">{{ branche.title |  slice:0:19 }}</h3>\n                    <div class=\"img-post\">\n                        <img src=\"../assets/images/post.jpg\">\n                    </div>\n                    <div class=\"desc-post\">\n                            {{ branche.body | slice:0:120 }}\n                    </div>\n                    <a class=\"btn-more\" href=\"#\">Read More</a>\n                    \n\n                </div>\n\n            </div>\n        </div>\n    </div>\n</section>\n<!-- End Latest Articles -->\n\n\n\n"
 
 /***/ }),
 
@@ -568,12 +567,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/post.service */ "./src/app/services/post.service.ts");
+
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(service) {
+        this.service = service;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service.get().subscribe(function (res) { _this.branches = res; });
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -581,7 +585,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -634,6 +638,43 @@ var MaterialModule = /** @class */ (function () {
         })
     ], MaterialModule);
     return MaterialModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/post.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/post.service.ts ***!
+  \******************************************/
+/*! exports provided: PostService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostService", function() { return PostService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var PostService = /** @class */ (function () {
+    function PostService(http) {
+        this.http = http;
+        this.url = 'https://jsonplaceholder.typicode.com/posts';
+    }
+    PostService.prototype.get = function () {
+        return this.http.get(this.url);
+    };
+    PostService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], PostService);
+    return PostService;
 }());
 
 
