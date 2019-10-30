@@ -123,7 +123,7 @@
                     <i class="fa fa-user"></i> Login
                 </span>
             </ng-template>
-            <ul class="menu profile-menu" *ngIf="user else anonymouseUser">
+            <ul class="menu profile-menu" *ngIf="serviceauth.user$ | async as user else anonymouseUser">
                 <li><a class="nav-link" routerLink="/home"> <i class="fa fa-user"></i> {{user.displayName}} </a>
                         <ul class="sub-menu">
                                 <li><a routerLink="/profile">My-Profile</a></li>

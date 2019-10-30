@@ -1,17 +1,8 @@
 import { Component } from '@angular/core';
-// import { MatDialog } from '@angular/material';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
 import { LoginComponent } from 'src/app/login/login.component';
-
-// import { MatDialogModule } from '@angular/material';
 import {MatDialog} from '@angular/material/dialog';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as Firebase from 'firebase';
-
-
-
-
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -19,11 +10,9 @@ import * as Firebase from 'firebase';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  user: Firebase.User;
 
-  constructor( public dialog: MatDialog,public login: MatDialog,private afAuth: AngularFireAuth) { 
-    //Rest To User
-    this.afAuth.authState.subscribe(user => this.user = user);
+  constructor( public dialog: MatDialog,public login: MatDialog,private serviceauth: AuthService) { 
+ 
   }
   openDialog(){
     // this.dialog.open(DialogComponent, {
@@ -42,8 +31,8 @@ export class HeaderComponent {
     this.login.open(LoginComponent,{panelClass: 'login-style'} );
   }
   logout(){
-    this.afAuth.auth.signOut();
-
+    this.serviceauth.logout();
   }
+
 
 }

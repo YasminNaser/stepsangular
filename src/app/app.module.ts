@@ -30,15 +30,22 @@ import { environment } from 'src/environments/environment.prod';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
+import { CategoryComponent } from './category/category.component';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 var firebaseConfig = {
-  apiKey: "AIzaSyC5xWffVvzDmLIqZQOmU03_US-KL4IEovM",
-  authDomain: "steps-bb36c.firebaseapp.com",
-  databaseURL: "https://steps-bb36c.firebaseio.com",
-  projectId: "steps-bb36c",
-  storageBucket: "steps-bb36c.appspot.com",
-  messagingSenderId: "967818533041",
-  appId: "1:967818533041:web:e46256c57ca180e68faa90",
-  measurementId: "G-HBN9KZF00G"
+  apiKey: "AIzaSyB1Au9b21gGVsgo01g3SGC4U8LBFwh22mg",
+  authDomain: "stepsapp-59394.firebaseapp.com",
+  databaseURL: "https://stepsapp-59394.firebaseio.com",
+  projectId: "stepsapp-59394",
+  storageBucket: "stepsapp-59394.appspot.com",
+  messagingSenderId: "207616320982",
+  appId: "1:207616320982:web:9e8fcdf5a7b713d3727077",
+  measurementId: "G-QK7NTJRMRX"
 }
 
 @NgModule({
@@ -52,7 +59,9 @@ var firebaseConfig = {
     FooterComponent,
     LoginComponent,
     ProfileComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AboutComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +73,7 @@ var firebaseConfig = {
     FormsModule,
     CustomFormsModule,
     ReactiveFormsModule,
+    AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC3NVM-2584m6EdL_ie-riCC5Kx009IpC4'
     }),
@@ -78,7 +88,12 @@ var firebaseConfig = {
     LoginComponent
   ],
 
-  providers: [],
+  providers: [
+
+    AuthGuardService,
+    AuthService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

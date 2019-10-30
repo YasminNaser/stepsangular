@@ -77,6 +77,11 @@ dl, ol, ul {
     position: absolute !important;
     right:0px !important;
 }
+.login-style{
+    position: absolute !important;
+    /* right:0px !important; */
+
+}
 .cdk-overlay-dark-backdrop{
     background-color: rgba(27, 26, 26, 0.98);
     overflow-x: hidden;
@@ -88,6 +93,12 @@ dl, ol, ul {
     transition: 0.5s;
     right: 0;
 }
+.login-style.cdk-overlay-pane{
+    right: 50%;
+    height: 300px;
+    width: 600px;
+    top: 30%;
+}
 .dialog-style  .mat-dialog-container {
     height: 100%;
     border-radius: 0px;
@@ -95,6 +106,23 @@ dl, ol, ul {
     background-color: #fff;
     padding: 100px 50px 30px;
     width: 370px;
+}
+.login-style  .mat-dialog-container {
+    display: block;
+    padding: 24px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    width: inherit;
+    height:inherit;
+    min-height: auto !important;
+    max-height: auto !important;
+
+}
+.btn-login{
+    width: 100px;
+    height: 30px;
 }
 .cdk-overlay-pane{
     height: 100%;
